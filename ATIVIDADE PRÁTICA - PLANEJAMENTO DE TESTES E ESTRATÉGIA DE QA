@@ -1,0 +1,312 @@
+ATIVIDADE PRÁTICA - PLANEJAMENTO DE TESTES E ESTRATÉGIA DE QA
+
+ESTUDO DE CASO
+Sistema: FinPay — Plataforma de Pagamentos Digitais
+A empresa FinPay está lançando uma nova versão de seu sistema de pagamentos online.
+O sistema possui as seguintes funcionalidades:
+Login com autenticação em dois fatores
+
+
+Cadastro de usuário
+
+
+Transferência entre contas
+
+
+Pagamento de boletos
+
+
+Histórico de transações
+
+
+Alteração de senha
+
+
+Atualização de foto de perfil
+
+
+Logout
+
+
+
+Situação do Projeto
+Prazo de entrega: 2 dias
+
+
+Equipe de QA: apenas você
+
+
+Sistema ainda em fase beta
+
+
+Houve mudanças recentes no módulo de pagamentos
+
+
+
+Seu Papel
+Você é o responsável por:
+Definir estratégia de testes
+
+
+Priorizar funcionalidades
+
+
+Identificar riscos
+
+
+Determinar quando começar e parar de testar
+
+
+
+TAREFA
+Crie um Mini Plano de Teste Estratégico para o sistema.
+Seu plano deve demonstrar:
+pensamento crítico
+
+
+visão de risco
+
+
+capacidade de priorização
+
+
+tomada de decisão técnica
+
+
+
+TEMPLATE PARA PREENCHIMENTO
+
+1. Escopo de Teste
+Quais partes do sistema serão testadas e quais não serão testadas?
+Testar:
+Login com autenticação em dois fatores
+
+
+Cadastro de usuário
+
+
+Transferência entre contas
+
+
+Pagamento de boletos
+
+
+Histórico de transações
+
+
+Alteração de senha
+
+
+Logout
+
+Não testar:
+
+
+Atualização de foto de perfil (testes aprofundados de upload/edição de imagem)
+
+
+Testes estéticos detalhados de UI (foco não será visual)
+
+
+Testes extensivos de compatibilidade entre múltiplos navegadores
+
+Justificativa:
+O prazo é de apenas 2 dias e há somente um QA. Portanto, a priorização será baseada em risco e impacto financeiro. Funcionalidades que envolvem movimentação de dinheiro e segurança terão prioridade máxima. Itens visuais ou cosméticos terão cobertura mínima, pois não impactam diretamente o negócio.
+
+2. Funcionalidades Críticas
+Liste as três funcionalidades mais críticas e explique o motivo.
+1 —
+ Motivo: Envolve movimentação direta de dinheiro. Qualquer erro pode causar prejuízo financeiro, impacto jurídico e perda de confiança do usuário.
+2 —
+ Motivo: Também envolve transação financeira e foi mencionado que houve mudanças recentes no módulo de pagamentos, aumentando o risco de falhas.
+3 —
+ Motivo: É a porta de entrada do sistema. Falhas podem permitir acesso indevido ou impedir usuários legítimos de utilizar a plataforma.
+
+3. Análise de Risco
+Preencha a tabela.
+Funcionalidade
+Impacto (1–5)
+Probabilidade (1–5)
+Risco
+Justificativa
+Transferência entre contas
+5
+4
+20
+Alto impacto financeiro e possibilidade de erro em cálculo ou saldo
+Pagamento de boletos
+5
+4
+20
+Módulo sofreu mudanças recentes (risco elevado)
+Login com 2FA
+5
+3
+15
+Risco de falha de segurança ou bloqueio indevido
+Cadastro de usuário
+4
+3
+12
+Erros podem impedir novos clientes de usar o sistema
+Histórico de transações
+4
+2
+8
+Impacta confiança, mas não movimenta dinheiro
+Alteração de senha
+4
+2
+8
+Pode impactar segurança
+Logout
+2
+2
+4
+Baixo impacto no negócio
+Atualização de foto
+1
+2
+2
+Impacto apenas estético
+
+
+4. Estratégia de Teste
+Qual abordagem será utilizada?
+(X) Baseada em risco
+( ) Baseada em requisito
+( ) Baseada em uso real
+( ) Baseada em histórico
+Explique sua escolha:
+O sistema é financeiro, possui prazo curto e houve alteração recente em módulo crítico. Logo, a abordagem baseada em risco é a mais adequada, pois direciona o esforço para funcionalidades com maior impacto financeiro e de segurança.
+
+5. Estratégia de Execução
+Ordem de teste das funcionalidades:
+Login com 2FA
+
+
+Transferência entre contas
+
+
+Pagamento de boletos
+
+
+Cadastro
+
+
+Alteração de senha
+
+
+Histórico
+
+
+Logout
+
+
+Foto de perfil
+
+Tipos de testes que serão aplicados:
+Testes funcionais
+
+
+Testes de validação de regras de negócio
+
+
+Testes negativos (valores inválidos, campos vazios)
+
+
+Testes exploratórios
+
+
+Testes de regressão (principalmente no módulo de pagamentos)
+
+Exemplos de validação:
+Transferência com saldo insuficiente
+
+
+Pagamento de boleto vencido
+
+
+Código 2FA inválido
+
+
+Cadastro com CPF já existente
+
+
+Alteração de senha com senha antiga incorreta
+
+6. Riscos Identificados
+Liste possíveis falhas críticas do sistema.
+Transferência duplicada
+
+
+Pagamento debitado sem confirmação
+
+
+Falha na atualização de saldo
+
+
+Autenticação permitindo acesso indevido
+
+
+Timeout durante transações
+
+
+Problemas de integração com sistema bancário
+
+
+7. Critérios de Entrada
+Quando os testes podem começar?
+Build estável disponibilizada
+
+
+Ambiente configurado
+
+
+Acesso ao banco de dados de teste
+
+
+Requisitos mínimos documentados
+
+
+Módulo de pagamento atualizado disponível
+
+
+8. Critérios de Saída
+Quando os testes devem parar?
+Todas as funcionalidades críticas foram testadas
+
+
+Não houver defeitos críticos ou bloqueadores abertos
+
+
+Riscos altos estiverem mitigados
+
+
+Prazo final atingido
+9. Ambiente de Teste
+Onde os testes serão realizados?
+Ambiente de homologação (staging)
+
+
+Banco de dados de teste
+
+
+Simulador de pagamento bancário
+
+
+Navegador principal (ex: Chrome atualizado)
+10. Decisão Estratégica Final
+Se você tivesse apenas 2 horas para testar, o que validaria primeiro e por quê?
+Resposta:
+Se eu tivesse apenas 2 horas para testar, validaria primeiro:
+Login com 2FA
+
+
+Transferência entre contas
+
+
+Pagamento de boletos
+
+
+Porque essas três funcionalidades envolvem segurança e movimentação de dinheiro. Qualquer falha nelas pode gerar prejuízo financeiro direto e danos à reputação da empresa. Em cenário de tempo extremamente limitado, a prioridade é proteger o negócio.
