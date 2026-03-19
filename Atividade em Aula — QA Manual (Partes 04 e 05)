@@ -1,0 +1,59 @@
+Atividade em Aula — QA Manual (Partes 04 e 05)
+
+PARTE 04 — Casos de Teste
+Template — Caso de Teste 1
+ID: CT-001
+Título/Objetivo: Validar depósito com valor zero
+Pré-condição: Conta "tony" criada
+Passos:
+Acessar função de depósito
+Informar titular "tony"
+Informar valor 0
+Resultado esperado: Sistema deve rejeitar depósito com valor 0 e exibir erro
+Resultado obtido: Sistema aceita o depósito e exibe "OK - Depósito realizado: 0"
+Status (Pass/Fail): Fail
+Evidência: "OK - Depósito realizado: 0"
+
+Template — Caso de Teste 2
+ID: CT-002
+Título/Objetivo: Validar depósito com valor negativo
+Pré-condição: Conta "tony" criada
+Passos:
+Acessar função de depósito
+Informar titular "tony"
+Informar valor -100
+Resultado esperado: Sistema deve rejeitar depósito com valor negativo
+Resultado obtido: Sistema aceita o depósito e saldo é reduzido
+Status (Pass/Fail): Fail
+Evidência: "OK - Depósito realizado: -100"
+
+Template — Caso de Teste 3
+ID: CT-003
+Título/Objetivo: Validar saque acima do saldo
+Pré-condição: Conta "tony" com saldo disponível
+Passos:
+Acessar função de saque
+Informar titular "tony"
+Informar valor maior que o saldo
+Resultado esperado: Sistema deve bloquear operação e exibir erro
+Resultado obtido: Sistema exibe "ERRO - Saldo insuficiente" e não realiza saque
+Status (Pass/Fail): Pass
+Evidência: "ERRO - Saldo insuficiente"
+
+PARTE 05 — Bug Report
+Título: Sistema permite depósito com valor negativo
+Severidade (Baixa/Média/Alta): Alta
+Prioridade (Baixa/Média/Alta): Alta
+Ambiente: Google Colab / Python 3.x / Banco do Stark
+Descrição:
+O sistema está permitindo a realização de depósitos com valores negativos, o que reduz o saldo da conta, comportamento incorreto para a operação de depósito.
+Passos para reproduzir:
+Criar conta com nome "tony"
+Executar depósito com valor -100
+Consultar saldo da conta
+Resultado esperado: Sistema deve bloquear depósito com valor negativo e exibir erro
+Resultado obtido: Sistema aceita o valor negativo e subtrai do saldo
+Evidência:
+"OK - Depósito realizado: -100"
+Impacto/Risco:
+Pode causar inconsistência financeira, permitindo manipulação indevida de saldo e comprometendo a confiabilidade do sistema.
